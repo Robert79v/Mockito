@@ -15,14 +15,14 @@ public class mockitopass {
 
     @Test
     public void testMediumPassword() {
-        String mediumPassword = "abc12345"; // At least 8 characters, letters, and digits
+        String mediumPassword = "abc12345";
         PasswordUtil.SecurityLevel result = PasswordUtil.assessPassword(mediumPassword);
         assertEquals(PasswordUtil.SecurityLevel.MEDIUM, result);
     }
 
     @Test
     public void testStrongPassword() {
-        String strongPassword = "abc123$45"; // At least 8 characters, letters, digits, and special character
+        String strongPassword = "abc123$45";
         PasswordUtil.SecurityLevel result = PasswordUtil.assessPassword(strongPassword);
         assertEquals(PasswordUtil.SecurityLevel.STRONG, result);
     }
