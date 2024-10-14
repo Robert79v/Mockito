@@ -13,11 +13,14 @@ public class Parseador {
     public int obtenerParte2(final String ecuacion) {
         String[] partes1 = obtenerPartes12(ecuacion);
         String parte2 = partes1[1].trim();
+
+        // Verifica si el operador es un signo negativo y ajusta el valor de la parte2 en consecuencia
         String operador = obtenerOperador(ecuacion);
         if ("-".equals(operador)) {
-            return Integer.valueOf(parte2) * (-1);
+            return Integer.valueOf(parte2) * (-1);  // Si el operador es "-", multiplica la parte por -1
         }
-        return Integer.valueOf(parte2);
+
+        return Integer.valueOf(parte2);  // Devuelve el valor de la segunda parte tal cual si el operador es "+"
     }
 
     public int obtenerParte3(final String ecuacion) {
