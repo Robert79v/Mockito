@@ -1,11 +1,10 @@
-import org.junit.Before;
-import org.junit.Test;
-import static org.mockito.Mockito.*;
-
 import org.example.EcuacionPrimerGrado;
 import org.example.Parseador;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class EcuacionPrimerGradoTest {
 
@@ -22,6 +21,7 @@ public class EcuacionPrimerGradoTest {
         ecuacion.setParseador(parseadorMock);
     }
 
+    //Verificar que resuelve una ecuación simple.
     @Test
     public void testObtenerResultadoEcuacionSimple() {
         String ecuacionString = "2x + 4 = 8";
@@ -36,6 +36,7 @@ public class EcuacionPrimerGradoTest {
         assertEquals(2.0, resultado, 0.001);
     }
 
+    //Verificar que resuelve una ecuación con términos negativos.
     @Test
     public void testObtenerResultadoEcuacionNegativa() {
         String ecuacionString = "3x - 6 = 9";
@@ -48,6 +49,7 @@ public class EcuacionPrimerGradoTest {
         assertEquals(5.0, resultado, 0.001);
     }
 
+    //Verificar que resuelve una ecuación con resultados negativos.
     @Test
     public void testObtenerResultadoConResultadoNegativo() {
         String ecuacionString = "4x + 3 = 1";
@@ -60,6 +62,7 @@ public class EcuacionPrimerGradoTest {
         assertEquals(-0.5, resultado, 0.001);
     }
 
+    //verificar resuelve ecuaciones con un resultado igual a 0.
     @Test
     public void testObtenerResultadoConCero() {
         String ecuacionString = "5x = 0";
